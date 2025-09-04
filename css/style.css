@@ -1,14 +1,14 @@
-/* Estilo para la barra de carga */
+
 #barraCarga {
   width: 0%;
   height: 4px;
-  background-color: #3b82f6; /* Color azul de Tailwind */
+  background-color: #3b82f6; /
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
   transition: width 0.3s ease-in-out;
-  visibility: hidden; /* Inicialmente oculto */
+  visibility: hidden; 
 }
 #barraCarga.visible {
   visibility: visible;
