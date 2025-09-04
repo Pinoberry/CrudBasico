@@ -9,13 +9,13 @@ const modalEdicion = document.getElementById('modalEdicion');
 const inputEditarTarea = document.getElementById('inputEditarTarea');
 const btnGuardarEdicion = document.getElementById('btnGuardarEdicion');
 
-const barraCarga = document.getElementById('barraCarga'); // Elemento de la barra de carga
+const barraCarga = document.getElementById('barraCarga'); 
 
 let tareas = JSON.parse(localStorage.getItem('tareas')) || [];
 let indiceTareaAEditar = null;
 let indiceTareaAEliminar = null;
 
-// Función para mostrar la barra de carga
+
 function mostrarBarraCarga() {
     barraCarga.style.width = '0%';
     barraCarga.classList.add('visible');
@@ -27,17 +27,17 @@ function mostrarBarraCarga() {
         } else {
             clearInterval(intervalo);
         }
-    }, 50); // Simulación de progreso más rápida
+    }, 50); 
 }
 
-// Función para ocultar la barra de carga y completarla
+
 function ocultarBarraCarga() {
     barraCarga.style.width = '100%';
     barraCarga.classList.add('completa');
     setTimeout(() => {
         barraCarga.classList.remove('visible', 'completa');
         barraCarga.style.width = '0%';
-    }, 300); // Pequeño retraso
+    }, 300); 
 }
 
 function renderizarTareas() {
@@ -68,10 +68,10 @@ function renderizarTareas() {
 
 function guardarTareasConCarga() {
     mostrarBarraCarga();
-    setTimeout(() => { // Simular guardado asíncrono
+    setTimeout(() => { 
         localStorage.setItem('tareas', JSON.stringify(tareas));
         ocultarBarraCarga();
-    }, 500); // Retardo de 0.5 segundos para ver la carga
+    }, 500); 
 }
 
 function agregarTarea() {
@@ -99,7 +99,7 @@ function guardarEdicion() {
             renderizarTareas();
             cerrarModalEdicion();
         } else {
-            alert('El campo de edición no puede estar vacío.'); // Considera reemplazar esto con un modal también
+            alert('El campo de edición no puede estar vacío.'); 
         }
     }
 }
@@ -144,4 +144,4 @@ inputTarea.addEventListener('keypress', function(e) {
 btnGuardarEdicion.addEventListener('click', guardarEdicion);
 btnConfirmarEliminar.addEventListener('click', confirmarEliminar);
 
-renderizarTareas(); // Renderiza las tareas al cargar la página inicialmente
+renderizarTareas(); 
