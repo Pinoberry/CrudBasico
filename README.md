@@ -54,7 +54,4 @@ Puedes personalizar la aplicación modificando los siguientes archivos:
 - Navegador web moderno (Chrome, Firefox, Safari, Edge)
 - No se requiere servidor web (funciona directamente desde el sistema de archivos)
 
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
