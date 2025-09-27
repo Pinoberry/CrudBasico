@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Tareas con Barra de Carga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body
+    class="bg-gray-100 p-8 font-sans flex items-center justify-center min-h-screen relative"
+  >
+
+    <div id="barraCarga"></div>
+
+    <div
+      class="max-w-screen-lg mx-auto bg-white p-8 rounded-lg shadow-xl w-full"
+    >
+
+      <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">
+        Mis Tareas Diarias
+      </h1>
+
+      <div class="mb-6 flex gap-3">
+        <input
+          type="text"
+          id="inputTarea"
+          placeholder="Añadir nueva tarea..."
+          class="flex-grow p-3.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+        />
+        <button
+          id="btnAgregar"
+          class="bg-blue-600 text-white px-6 py-3.5 rounded-md hover:bg-blue-700 transition-colors text-lg font-semibold"
+        >
+          Añadir
+        </button>
+      </div>
+
+      <ul id="listaTareas" class="space-y-4">
+
+      </ul>
+    </div>
+
+
+    <div
+      id="modalConfirmacion"
+      class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center hidden"
+    >
+      <div
+        class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md text-center relative"
+      >
+        <button
+          class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+          onclick="cerrarModalConfirmacion()"
+        >
+          &times;
+        </button>
+        <h3 class="text-2xl font-bold text-red-600 mb-5">
+          Confirmar Eliminación
+        </h3>
+        <p class="text-gray-700 text-lg mb-8">
+          ¿Estás seguro de que quieres eliminar esta tarea?
+        </p>
+        <div class="flex justify-center space-x-5">
+          <button
+            id="btnConfirmarEliminar"
+            class="bg-red-600 text-white px-6 py-3 rounded-md hover:bg-red-700 transition-colors text-lg font-semibold"
+          >
+            Sí, Eliminar
+          </button>
+          <button
+            class="bg-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-400 transition-colors text-lg font-semibold"
+            onclick="cerrarModalConfirmacion()"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div
+      id="modalEdicion"
+      class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center hidden"
+    >
+      <div
+        class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md text-center relative"
+      >
+        <button
+          class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+          onclick="cerrarModalEdicion()"
+        >
+          &times;
+        </button>
+        <h3 class="text-xl font-bold text-blue-600 mb-5">Editar Tarea</h3>
+        <input
+          type="text"
+          id="inputEditarTarea"
+          class="w-full p-3.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-8 text-lg"
+        />
+        <div class="flex justify-center space-x-5">
+          <button
+            id="btnGuardarEdicion"
+            class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors text-lg font-semibold"
+          >
+            Guardar Cambios
+          </button>
+          <button
+            class="bg-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-400 transition-colors text-lg font-semibold"
+            onclick="cerrarModalEdicion()"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

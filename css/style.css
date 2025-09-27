@@ -1,0 +1,18 @@
+
+#barraCarga {
+  width: 0%;
+  height: 4px;
+  background-color: #3b82f6; /
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: width 0.3s ease-in-out;
+  visibility: hidden; 
+}
+#barraCarga.visible {
+  visibility: visible;
+}
+#barraCarga.completa {
+  width: 100%;
+}
